@@ -22,7 +22,7 @@ node {
    // Checkout code from repository
    checkout scm
    
-   
+   fdfdfd
    
    }
    catch (exc) {

@@ -14,5 +14,8 @@ import groovy.json.JsonOutput
 import java.net.URL
  
 node {
-	checkout scm
+	 stage 'Checkout'
+
+   // Checkout code from repository
+   checkout scm
 }

@@ -14,8 +14,23 @@ import groovy.json.JsonOutput
 import java.net.URL
  
 node {
+	try {
+	
+
 	 stage 'Checkout'
 
    // Checkout code from repository
    checkout scm
+   
+   
+   
+   }
+   catch (exc) {
+    String recipient = 'infra@lists.jenkins-ci.org'
+    mail subject: "${env.JOB_NAME} (${env.BUILD_NUMBER}) failed",
+            body: "It appears that ${env.BUILD_URL} is failing, somebody should do something about that",
+              to: recipient,
+         replyTo: recipient,
+            from: 'noreply@ci.jenkins.io'
+}
 }

@@ -15,14 +15,10 @@ import java.net.URL
  
 node {
 	try {
-	
+	 	stage 'Checkout'
 
-	 stage 'Checkout'
-
-   // Checkout code from repository
-   checkout scm
-   
-   fdfdfd
+  		// Checkout code from repository
+   		checkout scm
    
    }
    catch (exc) {

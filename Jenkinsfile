@@ -22,7 +22,7 @@ node {
    		checkout scm
    		
    		stage 'build'
-   		build scm
+   		
    		
    
    }

@@ -23,7 +23,7 @@ node {
    		checkout scm
    		
    		stage 'build'
-   		buildInfo = rtMaven.run pom: 'maven-example/pom.xml', goals: 'clean install'
+   		build
    		
    
    }

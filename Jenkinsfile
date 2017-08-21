@@ -14,8 +14,7 @@ import groovy.json.JsonOutput
 import java.net.URL
  
 node {
-	def rtMaven = Artifactory.newMavenBuild()
- 	def buildInfo
+
 	try {
 	 	stage 'Checkout'
 
@@ -23,7 +22,7 @@ node {
    		checkout scm
    		
    		stage 'build'
-   		build
+   		build scm
    		
    
    }

@@ -1,3 +1,4 @@
+package com.onepoint.testjavajenkins;
 
 public class Hello {
 

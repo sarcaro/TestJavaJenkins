@@ -14,11 +14,17 @@ import groovy.json.JsonOutput
 import java.net.URL
  
 node {
+	def rtMaven = Artifactory.newMavenBuild()
+ 	def buildInfo
 	try {
 	 	stage 'Checkout'
 
   		// Checkout code from repository
    		checkout scm
+   		
+   		stage 'build'
+   		buildInfo = rtMaven.run pom: 'maven-example/pom.xml', goals: 'clean install'
+   		
    
    }
    catch (exc) {

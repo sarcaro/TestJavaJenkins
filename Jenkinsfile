@@ -17,21 +17,19 @@ node {
 
 	try {
 	 	stage 'Checkout'
-
   		// Checkout code from repository
    		checkout scm
    		
    		stage 'build'
-   		
-   		
+		sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
    
    }
    catch (exc) {
-    String recipient = 's.arcaro@groupeonepoint.com'
+    /*String recipient = 's.arcaro@groupeonepoint.com'
     mail subject: "${env.JOB_NAME} (${env.BUILD_NUMBER}) failed",
             body: "It appears that ${env.BUILD_URL} is failing, somebody should do something about that",
               to: recipient,
          replyTo: recipient,
-            from: 'noreply@ci.jenkins.io'
+            from: 'noreply@ci.jenkins.io'*/
 }
 }
